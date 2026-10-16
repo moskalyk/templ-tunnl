@@ -1,0 +1,19 @@
+{
+  "name": "templ-tunnl",
+  "version": "0.0.1",
+  "description": "a tunnel between 2 endpoints running http(s)",
+  "keywords": [
+    "tunnel"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/moskalyk/templ-tunnl"
+  },
+  "license": "ISC",
+  "author": "nero",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
