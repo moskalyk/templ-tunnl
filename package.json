@@ -14,6 +14,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+    "start:bridge":"npx tsx bridge/index.js",
+    "start:source":" npx tsx source/index.js",
+    "cli:start":"node tunnl ACTION=register PORT=3001",
     "test": "echo \"Error: no test specified\" && exit 1"
   }
 }

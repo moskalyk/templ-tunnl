@@ -5,12 +5,18 @@ const socket = new WebSocket('ws://localhost:8080');
 socket.addEventListener('open', event => {
   console.log('WebSocket connection established!');
   // Sends a message to the WebSocket server.
-  socket.send('Hello Server!');
+  process.env.ACTION && socket.send(JSON.stringify({action: 'register', url: `http://localhost:${process.env.PORT}/get`}));
 });
 
 // Listen for messages and executes when a message is received from the server.
-socket.addEventListener('message', event => {
-  console.log('Message from server: ', event.data);
+socket.addEventListener('message', async event => {
+    const res = JSON.parse(event.data.toString());
+    if(res.msg == 'id'){
+        console.log(`use id: ?id=${res.id} in request`)
+    } else {
+        const response = await fetch(res.url)
+        socket.send(JSON.stringify(await response.json()));
+    }
 });
 
 // Executes when the connection is closed, providing the close code and reason.

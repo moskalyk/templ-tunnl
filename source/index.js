@@ -1,11 +1,20 @@
 import { createServer } from 'node:http';
 
 const server = createServer((req, res) => {
+
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end('Hello, World!\n');
+  
+  const responseData = {
+      time: Date.now(),
+      msg: 'timing'
+  }
+  
+  const jsonContent = JSON.stringify(responseData)
+  
+  res.end(jsonContent);
 });
 
-server.listen(3001, () => {
-  console.log('Server running at http://localhost:3000/');
+server.listen(process.env.PORT, () => {
+  console.log(`Server running at http://localhost:${process.env.PORT}/`);
 });
 
