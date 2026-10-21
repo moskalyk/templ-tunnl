@@ -27,7 +27,7 @@ create a bridge to connect a localhost running server via a hosted server using 
 - [x] simple bridge
 - [x] cli interface
 - [ ] tests
-- [ ] multiple running bridges concurrently
+- [x] multiple running bridges concurrently
 - [ ] auth
 
 ## todos: i might be too lazy
