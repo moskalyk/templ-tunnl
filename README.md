@@ -13,7 +13,7 @@ create a bridge to connect a localhost running server via a hosted server using 
 
 ### 1. start bridge
 
-`$ npm run start:bridge # then send a curl after step 3` 
+`$ npx tsx tunnl start` 
 
 ### 2. start (any) localhost server
 
@@ -21,12 +21,12 @@ create a bridge to connect a localhost running server via a hosted server using 
 
 ### 3. fire up a cli running program to register
 
-`$ node tunnl ACTION=register PORT=3001`
+`$ npx tsx tunnl create -m POST -ps :3000/availability`
 
 ## todos: simple
 - [x] simple bridge
 - [x] cli interface
-- [ ] tests
+- [ ] tests (warning: requires testing)
 - [x] multiple running bridges concurrently
 - [ ] auth
 
